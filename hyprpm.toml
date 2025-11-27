@@ -1,0 +1,11 @@
+[repository]
+name = "liquid-glass"
+authors = ["xiaoxigua-1"]
+
+[liquid-glass]
+description = "A plugin to add liquid glass effect to windows"
+authors = ["xiaoxigua-1"]
+output = "liquid-glass.so"
+build = [
+    "make all",
+]

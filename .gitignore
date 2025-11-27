@@ -41,18 +41,9 @@
 *.dwo
 
 
-# CMake
-CMakeLists.txt.user
-CMakeCache.txt
-CMakeFiles
-CMakeScripts
-Testing
-Makefile
-cmake_install.cmake
-install_manifest.txt
-compile_commands.json
-CTestTestfile.cmake
-_deps
-CMakeUserPresets.json
+# Generated files
+src/shaders.hpp
+
+# Build artifacts
 .cache/
 build/
