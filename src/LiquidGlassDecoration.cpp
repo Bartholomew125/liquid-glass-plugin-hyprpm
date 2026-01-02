@@ -112,8 +112,8 @@ void CLiquidGlassDecoration::applyLiquidGlassEffect(CFramebuffer& sourceFB, CFra
     static auto* const PEDGE       = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:edge_thickness")->getDataStaticPtr();
 
     // Calculate transformation matrix
-    const auto TR = wlTransformToHyprutils(
-        invertTransform(g_pHyprOpenGL->m_renderData.pMonitor->m_transform));
+    const auto TR = Math::wlTransformToHyprutils(
+        Math::invertTransform(g_pHyprOpenGL->m_renderData.pMonitor->m_transform));
 
     Mat3x3 matrix = g_pHyprOpenGL->m_renderData.monitorProjection.projectBox(rawBox, TR, rawBox.rot);
     Mat3x3 glMatrix = g_pHyprOpenGL->m_renderData.projection.copy().multiply(matrix);
@@ -197,8 +197,8 @@ void CLiquidGlassDecoration::renderPass(PHLMONITOR pMonitor, const float& a) {
     CBox transformBox = wlrbox;
 
     // Apply monitor transform
-    const auto TR = wlTransformToHyprutils(
-        invertTransform(g_pHyprOpenGL->m_renderData.pMonitor->m_transform));
+    const auto TR = Math::wlTransformToHyprutils(
+        Math::invertTransform(g_pHyprOpenGL->m_renderData.pMonitor->m_transform));
     transformBox.transform(TR, 
         g_pHyprOpenGL->m_renderData.pMonitor->m_transformedSize.x,
         g_pHyprOpenGL->m_renderData.pMonitor->m_transformedSize.y);
