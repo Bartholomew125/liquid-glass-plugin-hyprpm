@@ -19,7 +19,7 @@
 CLiquidGlassDecoration::CLiquidGlassDecoration(PHLWINDOW pWindow)
     : IHyprWindowDecoration(pWindow), m_pWindow(pWindow) {
     // Disable Hyprland's built-in blur - we handle it ourselves
-    pWindow->m_windowData.noBlur = true;
+    // pWindow->m_windowData.noBlur = true;
 }
 
 // ============================================================================
