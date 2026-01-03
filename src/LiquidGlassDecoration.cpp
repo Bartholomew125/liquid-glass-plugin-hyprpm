@@ -157,9 +157,9 @@ void CLiquidGlassDecoration::applyLiquidGlassEffect(CFramebuffer& sourceFB, CFra
     glUniform1f(g_pGlobalState->locSpecularStrength, static_cast<float>(**PSPECULAR));
     glUniform1f(g_pGlobalState->locGlassOpacity, static_cast<float>(**POPACITY) * windowAlpha);
     glUniform1f(g_pGlobalState->locEdgeThickness, static_cast<float>(**PEDGE));
-    glUniform1f(g_pGlobalState->locRedTint, static_cast<float>(**PEDGE));
-    glUniform1f(g_pGlobalState->locGreenTint, static_cast<float>(**PEDGE));
-    glUniform1f(g_pGlobalState->locBlueTint, static_cast<float>(**PEDGE));
+    glUniform1f(g_pGlobalState->locRedTint, static_cast<float>(**REDTINT));
+    glUniform1f(g_pGlobalState->locGreenTint, static_cast<float>(**GREENTINT));
+    glUniform1f(g_pGlobalState->locBlueTint, static_cast<float>(**BLUETINT));
     
     // Untransformed size for proper calculations
     glUniform2f(g_pGlobalState->locFullSizeUntransformed, 
