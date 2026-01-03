@@ -110,6 +110,9 @@ void CLiquidGlassDecoration::applyLiquidGlassEffect(CFramebuffer& sourceFB, CFra
     static auto* const PSPECULAR   = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:specular_strength")->getDataStaticPtr();
     static auto* const POPACITY    = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:glass_opacity")->getDataStaticPtr();
     static auto* const PEDGE       = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:edge_thickness")->getDataStaticPtr();
+    static auto* const REDTINT     = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:red_tint")->getDataStaticPtr();
+    static auto* const GREENTINT   = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:green_tint")->getDataStaticPtr();
+    static auto* const BLUETINT    = (Hyprlang::FLOAT* const*)HyprlandAPI::getConfigValue(PHANDLE, "plugin:liquid-glass:blue_tint")->getDataStaticPtr();
 
     // Calculate transformation matrix
     const auto TR = Math::wlTransformToHyprutils(
@@ -154,6 +157,9 @@ void CLiquidGlassDecoration::applyLiquidGlassEffect(CFramebuffer& sourceFB, CFra
     glUniform1f(g_pGlobalState->locSpecularStrength, static_cast<float>(**PSPECULAR));
     glUniform1f(g_pGlobalState->locGlassOpacity, static_cast<float>(**POPACITY) * windowAlpha);
     glUniform1f(g_pGlobalState->locEdgeThickness, static_cast<float>(**PEDGE));
+    glUniform1f(g_pGlobalState->locRedTint, static_cast<float>(**PEDGE));
+    glUniform1f(g_pGlobalState->locGreenTint, static_cast<float>(**PEDGE));
+    glUniform1f(g_pGlobalState->locBlueTint, static_cast<float>(**PEDGE));
     
     // Untransformed size for proper calculations
     glUniform2f(g_pGlobalState->locFullSizeUntransformed, 
